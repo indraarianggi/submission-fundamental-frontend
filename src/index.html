@@ -6,125 +6,169 @@
         <title>News</title>
     </head>
     <body>
-        <header>
-            <div id="hero">
-                <section id="header-caption">
-                    <h1 id="heading">Berita terbaru kapanpun dimanapun</h1>
-                    <p id="subheading">
-                        Akses wawasan baru setiap hari dengan mudah
-                    </p>
-                    <div class="slider">
-                        <figure class="slider-item">
-                            <img src="./image/graphic.svg" alt="Bisnis" />
-                            <figcaption>Bisnis</figcaption>
-                        </figure>
-                        <figure class="slider-item">
-                            <img src="./image/videocamera.svg" alt="Bisnis" />
-                            <figcaption>Entertainmen</figcaption>
-                        </figure>
-                        <figure class="slider-item">
-                            <img src="./image/news.svg" alt="Bisnis" />
-                            <figcaption>Umum</figcaption>
-                        </figure>
-                        <figure class="slider-item">
-                            <img src="./image/heart.svg" alt="Bisnis" />
-                            <figcaption>Kesehatan</figcaption>
-                        </figure>
-                        <figure class="slider-item">
-                            <img src="./image/science.svg" alt="Bisnis" />
-                            <figcaption>Ilmu</figcaption>
-                        </figure>
-                        <figure class="slider-item">
-                            <img src="./image/soccer.svg" alt="Bisnis" />
-                            <figcaption>Olahraga</figcaption>
-                        </figure>
-                        <figure class="slider-item">
-                            <img src="./image/chip.svg" alt="Bisnis" />
-                            <figcaption>Teknologi</figcaption>
-                        </figure>
+        <header id="hero">
+            <section id="hero-caption">
+                <h1 id="heading">Berita terbaru kapanpun dimanapun</h1>
+                <p id="subheading">
+                    Akses wawasan baru setiap hari dengan mudah
+                </p>
+                <div class="slider">
+                    <div class="slider-item">
+                        <div class="category-card">
+                            <img
+                                class="icon"
+                                src="./image/graphic.svg"
+                                alt="Bisnis"
+                            />
+                            <span>Bisnis</span>
+                        </div>
                     </div>
-                </section>
-                <section id="header-image">
-                    <img src="./image/newspaper.jpg" alt="Newspaper" />
-                </section>
-            </div>
+                    <div class="slider-item">
+                        <div class="category-card">
+                            <img
+                                class="icon"
+                                src="./image/videocamera.svg"
+                                alt="Bisnis"
+                            />
+                            <span>Entertainmen</span>
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <div class="category-card">
+                            <img
+                                class="icon"
+                                src="./image/news.svg"
+                                alt="Bisnis"
+                            />
+                            <span>Umum</span>
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <div class="category-card">
+                            <img
+                                class="icon"
+                                src="./image/heart.svg"
+                                alt="Bisnis"
+                            />
+                            <span>Kesehatan</span>
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <div class="category-card">
+                            <img
+                                class="icon"
+                                src="./image/science.svg"
+                                alt="Bisnis"
+                            />
+                            <span>Ilmu</span>
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <div class="category-card">
+                            <img
+                                class="icon"
+                                src="./image/soccer.svg"
+                                alt="Bisnis"
+                            />
+                            <span>Olahraga</span>
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <div class="category-card">
+                            <img
+                                class="icon"
+                                src="./image/chip.svg"
+                                alt="Bisnis"
+                            />
+                            <span>Teknologi</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </header>
         <main>
             <aside>
-                <p>Kategori</p>
-                <ul>
-                    <li>Bisnis</li>
-                    <li>Entertainmen</li>
-                    <li>Umum</li>
-                    <li>Kesehatan</li>
-                    <li>Ilmu</li>
-                    <li>Olahraga</li>
-                    <li>Teknologi</li>
-                </ul>
+                <div class="card">
+                    <h2 class="section-heading">Kategori</h2>
+                    <ul class="slider">
+                        <li class="slider-item active">Bisnis</li>
+                        <li class="slider-item">Entertainmen</li>
+                        <li class="slider-item">Umum</li>
+                        <li class="slider-item">Kesehatan</li>
+                        <li class="slider-item">Ilmu</li>
+                        <li class="slider-item">Olahraga</li>
+                        <li class="slider-item">Teknologi</li>
+                    </ul>
+                </div>
             </aside>
             <div id="content">
                 <article id="top-trending">
-                    <h2>Berita Utama di ...</h2>
+                    <h2 class="section-heading">Berita Utama di ...</h2>
                     <div class="slider">
-                        <div class="slider-item news-card">
-                            <span class="news-label">Bisnis</span>
-                            <p class="news-title">
-                                Lorem Ipsum Dolor Sit Amet Consectetur
-                                Adipiscing
-                            </p>
-                            <div class="news-info">
-                                <span class="author">Thomas Wick</span>
-                                <span class="published">March 12, 2020</span>
+                        <div class="slider-item">
+                            <div class="news-card">
+                                <span class="news-label">Bisnis</span>
+                                <p class="news-title">
+                                    Lorem Ipsum Dolor Sit Amet Consectetur
+                                    Adipiscing
+                                </p>
+                                <div class="news-info">
+                                    <span class="author">Thomas Wick</span>
+                                    <span class="published">
+                                        March 12, 2020
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                        <div class="slider-item news-card">
-                            <span class="news-label">Bisnis</span>
-                            <p class="news-title">
-                                Lorem Ipsum Dolor Sit Amet Consectetur
-                                Adipiscing
-                            </p>
-                            <div class="news-info">
-                                <span class="author">Thomas Wick</span>
-                                <span class="published">March 12, 2020</span>
+                        <div class="slider-item">
+                            <div class="news-card">
+                                <span class="news-label">Bisnis</span>
+                                <p class="news-title">
+                                    Lorem Ipsum Dolor Sit Amet Consectetur
+                                    Adipiscing
+                                </p>
+                                <div class="news-info">
+                                    <span class="author">Thomas Wick</span>
+                                    <span class="published"
+                                        >March 12, 2020</span
+                                    >
+                                </div>
                             </div>
                         </div>
-                        <div class="slider-item news-card">
-                            <span class="news-label">Bisnis</span>
-                            <p class="news-title">
-                                Lorem Ipsum Dolor Sit Amet Consectetur
-                                Adipiscing
-                            </p>
-                            <div class="news-info">
-                                <span class="author">Thomas Wick</span>
-                                <span class="published">March 12, 2020</span>
+                        <div class="slider-item">
+                            <div class="news-card">
+                                <span class="news-label">Bisnis</span>
+                                <p class="news-title">
+                                    Lorem Ipsum Dolor Sit Amet Consectetur
+                                    Adipiscing
+                                </p>
+                                <div class="news-info">
+                                    <span class="author">Thomas Wick</span>
+                                    <span class="published"
+                                        >March 12, 2020</span
+                                    >
+                                </div>
                             </div>
                         </div>
-                        <div class="slider-item news-card">
-                            <span class="news-label">Bisnis</span>
-                            <p class="news-title">
-                                Lorem Ipsum Dolor Sit Amet Consectetur
-                                Adipiscing
-                            </p>
-                            <div class="news-info">
-                                <span class="author">Thomas Wick</span>
-                                <span class="published">March 12, 2020</span>
-                            </div>
-                        </div>
-                        <div class="slider-item news-card">
-                            <span class="news-label">Bisnis</span>
-                            <p class="news-title">
-                                Lorem Ipsum Dolor Sit Amet Consectetur
-                                Adipiscing
-                            </p>
-                            <div class="news-info">
-                                <span class="author">Thomas Wick</span>
-                                <span class="published">March 12, 2020</span>
+                        <div class="slider-item">
+                            <div class="news-card">
+                                <span class="news-label">Bisnis</span>
+                                <p class="news-title">
+                                    Lorem Ipsum Dolor Sit Amet Consectetur
+                                    Adipiscing
+                                </p>
+                                <div class="news-info">
+                                    <span class="author">Thomas Wick</span>
+                                    <span class="published"
+                                        >March 12, 2020</span
+                                    >
+                                </div>
                             </div>
                         </div>
                     </div>
                 </article>
                 <article>
-                    <h2>Cari berita lainnya</h2>
+                    <h2 class="section-heading">Cari berita lainnya</h2>
                     <section id="search-bar">
                         <input
                             type="search"
@@ -199,10 +243,43 @@
                                 <span class="published">March 12, 2020</span>
                             </div>
                         </div>
+                        <div class="news-card">
+                            <span class="news-label">Bisnis</span>
+                            <p class="news-title">
+                                Lorem Ipsum Dolor Sit Amet Consectetur
+                                Adipiscing
+                            </p>
+                            <div class="news-info">
+                                <span class="author">Thomas Wick</span>
+                                <span class="published">March 12, 2020</span>
+                            </div>
+                        </div>
+                        <div class="news-card">
+                            <span class="news-label">Bisnis</span>
+                            <p class="news-title">
+                                Lorem Ipsum Dolor Sit Amet Consectetur
+                                Adipiscing
+                            </p>
+                            <div class="news-info">
+                                <span class="author">Thomas Wick</span>
+                                <span class="published">March 12, 2020</span>
+                            </div>
+                        </div>
+                        <div class="news-card">
+                            <span class="news-label">Bisnis</span>
+                            <p class="news-title">
+                                Lorem Ipsum Dolor Sit Amet Consectetur
+                                Adipiscing
+                            </p>
+                            <div class="news-info">
+                                <span class="author">Thomas Wick</span>
+                                <span class="published">March 12, 2020</span>
+                            </div>
+                        </div>
                     </section>
                     <section id="pagination">
                         <ul>
-                            <li>1</li>
+                            <li class="active">1</li>
                             <li>2</li>
                             <li>3</li>
                             <li>...</li>
