@@ -1,3 +1,5 @@
+import moment from "moment";
+
 class NewsItem extends HTMLElement {
     constructor() {
         super();
@@ -76,7 +78,9 @@ class NewsItem extends HTMLElement {
                         <span class="author">${
                             this._news.author ? this._news.author : "-"
                         }</span>
-                        <span class="published">${this._news.publishedAt}</span>
+                        <span class="published">${moment
+                            .utc(this._news.publishedAt)
+                            .format("DD/MM/YYYY")}</span>
                     </div>
                 </div>
             </a>
