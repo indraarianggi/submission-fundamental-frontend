@@ -6,16 +6,37 @@ class NewsList extends HTMLElement {
         this.shadowDOM = this.attachShadow({ mode: "open" });
     }
 
-    connectedCallback() {
+    set articles(articles) {
+        this._articles = articles;
         this.render();
     }
 
     render() {
-        for (let i = 0; i < 9; i++) {
+        this.shadowDOM.innerHTML = "";
+
+        this._articles.forEach((article) => {
             const newsItemElement = document.createElement("news-item");
-            newsItemElement.news = "Lalala";
+            newsItemElement.news = article;
             this.shadowDOM.appendChild(newsItemElement);
-        }
+        });
+    }
+
+    renderError(message) {
+        this.shadowDOM.innerHTML = `
+            <style>
+                .placeholder {
+                    font-weight: lighter;
+                    color: #9e9e9e;
+                    text-align: center;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                }
+            </style>
+        `;
+
+        this.shadowDOM.innerHTML += `<p class="placeholder">${message}</p>`;
     }
 }
 

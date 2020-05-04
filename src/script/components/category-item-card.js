@@ -26,6 +26,13 @@ class CategoryItemCard extends HTMLElement {
                     height: 140px;
                     border-radius: 12px;
                     box-shadow: 0 0 10px rgba(51, 51, 51, 0.15);
+                    transition: box-shadow 300ms, transform 300ms;
+                }
+
+                .card:hover {
+                    cursor: pointer;
+                    transform: translateY(-4px);
+                    box-shadow: 0 4px 15px rgba(51, 51, 51, 0.30);
                 }
 
                 .card .icon {

@@ -12,26 +12,47 @@ class NewsItem extends HTMLElement {
     render() {
         this.shadowDOM.innerHTML = `
             <style>
-                .card {
-                    background-color: white;
-                    padding: 15px;
-                    border-radius: 12px;
-                    box-shadow: 0 0 10px rgba(51, 51, 51, 0.15);
+                * {
+                    padding: 0;
+                    margin: 0;
+                    box-sizing: border-box;
                 }
 
-                .label {
-                    color: white;
-                    background-color: #2196f3;
-                    font-size: 0.6rem;
-                    text-transform: uppercase;
-                    padding: 0.25em 0.5em;
-                    border-radius: 4px;
+                :host {
+                    display: block;
+                    background-color: white;
+                    border-radius: 12px;
+                    box-shadow: 0 0 10px rgba(51, 51, 51, 0.15);
+                    overflow: hidden;
+                    transition: box-shadow 300ms, transform 300ms;
+                }
+
+                :host(:hover) {
+                    cursor: pointer;
+                    transform: translateY(-4px);
+                    box-shadow: 0 4px 15px rgba(51, 51, 51, 0.30);
+                }
+
+                a {
+                    color: inherit;
+                    text-decoration: none;
+                }
+
+                img {
+                    width: 100%;
+                    max-height: 200px;
+                    object-fit: cover;
+                    object-position: center;
+                }
+
+                .content {
+                    padding: 15px;
                 }
 
                 .title {
                     font-weight: 700;
                     line-height: 1.5rem;
-                    margin: 15px 0;
+                    margin-bottom: 15px;
                 }
 
                 .info {
@@ -44,18 +65,21 @@ class NewsItem extends HTMLElement {
                     font-size: 0.6rem;
                 }
             </style>
-
-            <div class="card">
-                <span class="label">Bisnis</span>
-                <p class="title">
-                    Lorem Ipsum Dolor Sit Amet Consectetur
-                    Adipiscing
-                </p>
-                <div class="info">
-                    <span class="author">Thomas Wick</span>
-                    <span class="published">March 12, 2020</span>
+            
+            <a href="${this._news.url}" target="_blank">
+                <img src="${this._news.urlToImage}"/>
+                <div class="content">
+                    <p class="title">
+                        ${this._news.title}
+                    </p>
+                    <div class="info">
+                        <span class="author">${
+                            this._news.author ? this._news.author : "-"
+                        }</span>
+                        <span class="published">${this._news.publishedAt}</span>
+                    </div>
                 </div>
-            </div>
+            </a>
         `;
     }
 }

@@ -8,6 +8,15 @@ class SearchBar extends HTMLElement {
         this.render();
     }
 
+    set clickEvent(event) {
+        this._clickEvent = event;
+        this.render();
+    }
+
+    get value() {
+        return this.shadowDOM.querySelector("#search-input").value;
+    }
+
     render() {
         this.shadowDOM.innerHTML = `
             <style>
@@ -21,6 +30,7 @@ class SearchBar extends HTMLElement {
                 }
                 
                 input {
+                    font-size: 1rem;
                     padding: 10px 15px;
                     border: 1px solid #cfcfcf;
                     border-radius: 12px 0 0 12px;
@@ -35,6 +45,10 @@ class SearchBar extends HTMLElement {
                     border-radius: 0 12px 12px 0;
                     width: 20%;
                 }
+
+                button:hover {
+                    cursor: pointer;
+                }
                 
                 img {
                     width: 18px;
@@ -43,12 +57,16 @@ class SearchBar extends HTMLElement {
             </style>
 
             <div id="search-container">
-                <input type="search" placeholder="Masukkan judul berita" />
-                <button type="submit">
+                <input id="search-input" type="search" placeholder="Masukkan judul berita" />
+                <button id="search-button" type="submit">
                     <img src="./image//search.svg" alt="seach icon" />
                 </button>
             </div>
         `;
+
+        this.shadowDOM
+            .querySelector("#search-button")
+            .addEventListener("click", this._clickEvent);
     }
 }
 
