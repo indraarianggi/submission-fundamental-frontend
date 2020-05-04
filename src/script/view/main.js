@@ -1,12 +1,17 @@
-import "../components/category-list.js";
-import "../components/category-item-card.js";
+import "../components/search-bar.js";
 import "../components/news-list.js";
 
 const main = () => {
     const newsListElement = document.querySelector("news-list");
     const searchElement = document.querySelector("search-bar");
+    const categoryElements = document.querySelectorAll(".filter-item");
 
-    const getNews = async (search = null, category = null, page = 1) => {
+    let category = document
+        .querySelector(".filter-item.active")
+        .getAttribute("data-value");
+    let search = null;
+
+    const getNews = async () => {
         try {
             let paramString = "";
 
@@ -19,7 +24,7 @@ const main = () => {
             }
 
             const result = await fetch(
-                `https://newsapi.org/v2/top-headlines?country=id&pageSize=8&page=${page}${paramString}`,
+                `https://newsapi.org/v2/top-headlines?country=id&pageSize=10${paramString}`,
                 {
                     method: "GET",
                     headers: {
@@ -31,8 +36,13 @@ const main = () => {
             const resultJson = await result.json();
 
             if (resultJson.status === "ok") {
-                console.log("ARTICLE: ", resultJson.articles);
-                renderResult(resultJson.articles);
+                if (resultJson.totalResults) {
+                    renderResult(resultJson.articles);
+                } else {
+                    fallbackResult(
+                        `Tidak ada berita dengan kata kunci ${search} di kategori ${category}.`
+                    );
+                }
             } else {
                 fallbackResult(resultJson.message);
             }
@@ -50,13 +60,29 @@ const main = () => {
     };
 
     const onButtonSearchClicked = () => {
-        console.log("Search: ", searchElement.value);
-        getNews(searchElement.value);
+        search = searchElement.value;
+        getNews();
     };
 
-    const onCategoryCardClicked = () => {};
+    const onFilterItemClicked = (e) => {
+        document
+            .querySelector(".filter-item.active")
+            .classList.remove("active");
+
+        e.target.classList.add("active");
+
+        category = e.target.getAttribute("data-value");
+
+        getNews();
+    };
 
     searchElement.clickEvent = onButtonSearchClicked;
+
+    categoryElements.forEach((item) => {
+        item.addEventListener("click", onFilterItemClicked);
+    });
+
+    getNews();
 };
 
 export default main;

@@ -27,7 +27,6 @@ class NewsList extends HTMLElement {
                 .placeholder {
                     font-weight: lighter;
                     color: #9e9e9e;
-                    text-align: center;
                     -webkit-user-select: none;
                     -moz-user-select: none;
                     -ms-user-select: none;
