@@ -1,6 +1,8 @@
 import "../components/search-bar.js";
 import "../components/news-list.js";
 
+import config from "../../config/config.js"
+
 const main = () => {
     const newsListElement = document.querySelector("news-list");
     const searchElement = document.querySelector("search-bar");
@@ -28,7 +30,7 @@ const main = () => {
                 {
                     method: "GET",
                     headers: {
-                        "X-Api-Key": "58e8b3e236dd4ca583359ecb2bcf0159",
+                        "X-Api-Key": config.news_api_key,
                     },
                 }
             );
